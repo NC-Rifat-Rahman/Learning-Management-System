@@ -1,0 +1,18 @@
+{% extends "class/base.html" %} {% load static %} {% block title %} Classroom {% endblock %}
+{% block style %}
+
+
+{% endblock %}
+{% block body %}
+
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Welcome to the Reading Management System</h1>
+    <p>Get started Today</p>
+    <button onclick="document.location='/accounts/login'">Log In</button>
+    <button onclick="document.location='/register'">Sign Up</button>
+
+  </div>
+</div>
+
+{% endblock %}

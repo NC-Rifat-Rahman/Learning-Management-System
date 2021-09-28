@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %} {% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <!--Boxicon CDN Link-->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}" />
+
+    <!-- Scrollbar Custom CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+    />
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Pdf-Viwer Custom CSS-->
+    <link rel="stylesheet" href="../../static/css/pdf-viewer.css" />
+    <script src="../../static/PDFJSExpress/lib/webviewer.min.js"></script>
+
+    <!--PDF.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
+
+    <!--Face detection Js-->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+
+    <script src="../../static/js/Face_detection.js" async defer></script>
+  </head>
+
+  <body>
+    <!--Sidebar Starts-->
+    <div class="sidebar">
+      <div class="logo_content">
+        <div class="logo">
+          <i class="bx bxs-book-content"></i>
+          <div class="logo_name">Classroom</div>
+        </div>
+        <i class="bx bx-menu-alt-left" id="btn"></i>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltips">Dashboard</span>
+        </li>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a href="">
+            <i class="bx bx-user"></i>
+            <span class="links_name">{{ user.username }}</span>
+          </a>
+          <span class="tooltips">View Profile</span>
+        </li>
+        {% else %}
+        <li>
+          <a href="/accounts/login">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Login</span>
+          </a>
+          <span class="tooltips">Login</span>
+        </li>
+        {% endif %}
+
+        <li>
+          <a href="">
+            <i class="bx bx-chat"></i>
+            <span class="links_name">Messages</span>
+          </a>
+          <span class="tooltips">Messages</span>
+        </li>
+
+        <li>
+          <a href="">
+            <i class="bx bx-chalkboard"></i>
+            <span class="links_name">Classroom</span>
+          </a>
+          <span class="tooltips">Classroom</span>
+        </li>
+
+        <li>
+          <a href="/pdf-viewer">
+            <i class="bx bx-clipboard"></i>
+            <span class="links_name">Pdf</span>
+          </a>
+          <span class="tooltips">Pdf Viewer</span>
+        </li>
+
+        <li>
+          <a href="">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+          <span class="tooltips">Settings</span>
+        </li>
+
+        <li>
+          <a href="/accounts/logout">
+            <i class="bx bx-log-out" id="log_out"></i>
+            <span class="links_name">Logout</span>
+          </a>
+          <span class="tooltips">Logout</span>
+        </li>
+      </ul>
+    </div>
+    <!--Sidebar Ends-->
+
+    <div class="home_content">
+      <div class="text">Classroom</div>
+      <div class="face-control">
+        <video src="" id="feed" autoplay style="display: none"></video>
+        <canvas id="canvas" width="600px" height="350px"></canvas>
+      </div>
+      <div class="Qbox">
+        <div class="Qform">
+          <form action="#">
+            <p id="Qmsg">Ask a question</p>
+            <input type="text" id="question" name="question" />
+            <button type="submit" class="btn btn-primary">Submit Question</button>
+          </form>
+        </div>
+      </div>
+      {% block body %} {% endblock %}
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script>
+      let btn = document.querySelector("#btn");
+      let sidebar = document.querySelector(".sidebar");
+
+      btn.onclick = function () {
+        sidebar.classList.toggle("active");
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "class/base.html" %} {% load static %} {% block title %} Classroom {% endblock %}
+{% block style %}
+
+
+{% endblock %}
+{% block body %}
+<div class="class-nav">
+  <ul>
+    <li><a href="/classroom/">Home</a></li>
+    <li><a href="#tasks">Tasks</a></li>
+  </ul>
+</div>
+<div class="class-banner">
+  <img src="../../static/images/img_graduation.jpg" alt="class_banner" />
+  <div class="class-name">CSE327.1</div>
+</div>
+
+      <div class="post-row">
+        <div class="post-column">
+          <div class="post-card">
+            <i class='bx bx-task post-logo'  style="font-size: 40px"></i>
+            <div class="post-content">task notice: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, ipsa!
+            <br> date added
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+.profile-banner{
+
+    margin: auto;
+    width: 95%;
+    background-color: #42a5f5;
+    height: 15%;
+}
+
+.name{
+    height: fit-content;
+}
+
+.desc{
+    color: black;
+}
+.details{
+    margin-left: 10px;
+}
+
+.info{
+    margin: auto;
+    background-color: rgb(248, 246, 242);
+    width: 60%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: large;
+}
+
+.info p{
+    margin-left: 10px;
+    white-space: normal;
+    color: black;
+
+}

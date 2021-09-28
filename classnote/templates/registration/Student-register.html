@@ -1,0 +1,18 @@
+{% extends "class/base.html" %} {% block title %} Register {% endblock %} {% block body %}
+<div class="login-form">
+    {% if form.errors %}
+    <p>There's something wrong with what you entered!</p>
+    {% endif %} {% if next %}
+    <p>Hey, you can't access that page.</p>
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h2 class="text-center">Student Registration</h2>
+         {{form}}
+         {{ profile_form }}
+
+        <input type="submit" class="btn btn-primary btn-block mt-2" value="Register">
+    </form>
+    <p class="text-center"><a href="/accounts/login">Already have account? Login</a></p>
+</div>
+{% endblock %}

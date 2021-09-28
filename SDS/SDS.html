@@ -1,0 +1,762 @@
+<!doctype html>
+<html>
+<head>
+    <link rel= "stylesheet" href="srs-styling.css">
+    <link rel= "stylesheet" href="tocstyle.css">
+    <link rel="stylesheet" href="fancy.min.css"/>
+    <link rel= "stylesheet" href="stylesheetprint.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+   <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=goFnBcQpHVRVFReDm5qjkdr59yxoclrIrssd_sRJsrwrCn5eStQ9TqoGT2Y_H8gL7ptg9K5LEK9pPDu7_-NiTITY8PJuOQOmO1KKJvqUMfnbOUvyqGZg4C5ItmJDgAxXHEx70u6bYUsQdA57Enn_rGEUzURTanNp9Pon4dtB4-EKw4w1K-3NLL8g84bsWTMQzuzCdjkdpaU2EhQm2YPO3vGc2B_p9yvkv1tA3agLYqANYlXMreT7jOOdRbQ7ODXSqWTDnF6YQ6EDyvv9JrMYQK6hkN2TFEGweZoaSUSW7hpV78HY-4Y5K5Vi5HCwOGtZqIuzwPYgagvQN7gZFX9azvZo1ttsuQ-Y5N3raIs8cDGtlkRVRc63Dk0b5B-gdy7nL9GV6U6VDFc4_vVnF8LAbeo1zzgeZB5RwZd5f-sp-MXqVgkrOftc9firKkuyfEU2hfSyxfzerE2rpPSKIqkTUA" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9kb2MtMDAtNzgtZG9jcy5nb29nbGV1c2VyY29udGVudC5jb20vZG9jcy9zZWN1cmVzYy9nNTducnJiYWZxOGwxYms2OW90dG1ocXNjNjFzMDd1cy9oazk3NDB2MGoxcm05MjFiNWJlN2RpdmxybXNjdHRlZS8xNjA1NjI0Njc1MDAwLzAwNjUwNDY5NzYxMTAzODc1NDc3LzE1NDMzNzE4ODM3NTAwMjk2MjUzLzFmYXhBbEJVeGtaUGZiSFVEaWYzTWdnNEI2Yi1uVGtMbj9lPWRvd25sb2FkJmF1dGh1c2VyPTAmbm9uY2U9Y2lqN2F1bHVuam1hbyZ1c2VyPTE1NDMzNzE4ODM3NTAwMjk2MjUzJmhhc2g9amc4MmFwazRuYnBrdWI4b2E4bWZqdGRicTNhbWxyOWM"/></script>
+   
+   <title>SDS | CSE327</title>
+</head>
+
+
+<body>
+    <div class="full page">
+
+        <!--For Nav-->
+        <div class="srs-page">
+
+        <!--Navigation Starts Here-->
+           <section id="TOC">
+                <div class= "nav">
+                    <div id="contents">
+                   <ul class= "nav-column">
+                       <h5>System Design Specification</h5>
+    
+                       <li class="nav-menu">
+                        <a class= "nav-link" href="#cov">Cover</a>
+                        </li>
+    
+                       <li class="nav-menu">
+                        <a class= "nav-link" href="#con">Table Of Contents</a>
+                        </li>
+       
+                       <li class="nav-menu">
+                           <a class= "nav-link" href="#RevHis">Revision History</a>
+                       </li>
+       
+                       <li class="nav-menu">
+                           <a class= "nav-link"  href="#Intro">1. Introduction</a>
+                       </li>
+     
+                   
+       
+                       <li class="nav-menu">
+                           <a class= "nav-link"  href="#Doc_Conv">2. Document Conventions</a>
+                       </li>
+       
+                       <li class="nav-menu">
+                           <a class= "nav-link" data-toggle="collapse" href="#EIR">3. Description of Design Components</a>
+                       </li>
+                       <div id="EIR" class="collapse hide" data-parent="#contents">
+                           <div class="navdrop">
+                                <li><a class= "sub-link" href="#3.1">3.1 Server Side</a></li>  
+                                <li><a class= "sub-link" href="#3.2">3.2 Client Side</a></li>  
+                                <li><a class= "sub-link" href="#3.3">3.3 Mobile Application</a></li>
+                                <li><a class= "sub-link" href="#3.4">3.4 API</a></li>   
+                           </div>
+                       </div>
+       
+                       <li class="nav-menu">
+                           <a class= "nav-link"  href="#4.1">4. UML Class Diagram</a>
+                       </li>
+                      
+    
+                       <li class="nav-menu">
+                        <a class= "nav-link" data-toggle="collapse" href="#UC">5. Sequence Diagram</a>
+                    </li>
+                    <div id="UC" class="collapse hide" data-parent="#contents">
+                        <div class="navdrop">
+                      <li><a class= "sub-link" href="#5.1">5.1 Login</a></li> 
+                      <li><a class= "sub-link" href="#5.2">5.2 Verify User</a></li>
+                      <li><a class= "sub-link" href="#5.3">5.3 Edit Profile</a></li>
+                      <li><a class= "sub-link" href="#5.4">5.4 Create Classroom</a></li>
+                      <li><a class= "sub-link" href="#5.5">5.5 Generate Class Code</a></li>
+                      <li><a class= "sub-link" href="#5.6">5.6 Send Invitation Code</a></li>
+                      <li><a class= "sub-link" href="#5.7">5.7 Assign Pdf</a></li>
+                      <li><a class= "sub-link" href="#5.8">5.8 Check Questions</a></li>
+                      <li><a class= "sub-link" href="#5.9">5.9 View Reel of Images</a></li> 
+                      <li><a class= "sub-link" href="#5.10">5.10 Join Classroom</a></li>
+                      <li><a class= "sub-link" href="#5.11">5.11 Record Questions</a></li>
+
+                       </div>
+                    </div>
+       
+                       <li class="nav-menu">
+                           <a class= "nav-link" data-toggle="collapse" href="#ONR">6. Database Design</a>
+                       </li>
+                       <div id="ONR" class="collapse hide" data-parent="#contents">
+                           <div class="navdrop">
+                         <li><a class= "sub-link" href="#6.1">6.1 ER Diagram</a></li>  
+                         <li><a class= "sub-link" href="#6.2">6.2 ER Descriptions</a></li>
+                         <div class="navdrop">
+                            <li><a class= "sub-link" href="#6.2.1">6.2.1 Table Name: Teacher</a></li> 
+                            <li><a class= "sub-link" href="#6.2.2">6.2.2 Table Name: Classroom</a></li>
+                            <li><a class= "sub-link" href="#6.2.3">6.2.3 Table Name: Student</a></li>
+                            <li><a class= "sub-link" href="#6.2.4">6.2.4 Table Name: Pdf</a></li>
+                            <li><a class= "sub-link" href="#6.2.5">6.2.5 Table Name: studentImageList</a></li>
+                            <li><a class= "sub-link" href="#5.2.6">6.2.6 Table Name: pdf Question</a></li> 
+                         </div>  
+                         </div>
+                       </div>
+       
+                       <li class="nav-menu">
+                           <a class= "nav-link" href="#OR">7. Implementation Plan</a>
+                       </li>
+                       
+                   </ul>             
+               </div>
+               </div>
+               
+             </section>
+        <!-- Navigation Ends Here-->    
+        </div>
+         
+        <!--Main Context-->
+        <div class= "main">
+            <div class="context">
+            <!--Cover Page Starts Here-->
+            <div class= "title-content">
+                <div class="srs-cover">
+                    <h1 class="bar"></h1>
+                    <section id="cov">
+                        <h1 class="SRS">System Design <br>Specification<br><br></h1>
+                    </section>
+                        <h3 class="for">for</h3><br>
+                        <h2 class="SRS">Learning Management System</h2><br>
+                    <br><br>
+                        <p><br>Version 1.0 approved<br><br>
+                            <br>Prepared By<br>
+                            <br>Sonia Tasmin - 1811608042<br>
+                            <br>Md.Tawfiq-Uz-Zaman - 1812832042<br>
+                            <br>N M Rifat Rahman -1812817042<br><br>
+                            <br>Group - 5 <br>
+                            23 August, 2021
+                        </p>        
+                </div>       
+            </div>
+            <!--Cover Page Ends Here-->
+    
+            <!--Table of Contents Starts Here-->
+            <div class= "title-content">
+                <section id="con">
+                    <h3 class="TOC_h3"> Table of Contents</h3>
+                        <br>
+                        <ol class="c">
+                        <li>Cover</li>
+                        <li>Table of contents</li>
+                        <li>1. Introduction</li>
+                        </ol>
+                            
+                        <ol class="c">
+                        <li>2. Document Conventions</li>
+                        </ol>
+              
+                        <ol class="c">
+                        <li>3. Description of Design Components</li>
+                        </ol>
+                        <ul class="a">
+                        <li>3.1 Server Side</li>
+                        <li>3.2 Client Side</li>
+                        <li>3.3 Mobile</li>
+                        <li>3.4 API</li>
+                        </ul>
+        
+                        <ol class="c">
+                        <li>4. UML Class Diagram</li>
+                        
+                        </ol>
+        
+        
+                        <ol class="c">
+                        <li>5. Sequence Diagram</li>              
+                        </ol>
+        
+                        <ul class="a">
+                            <li>5.1 Login</li> 
+                            <li>5.2 Verify User</li>
+                            <li>5.3 Edit Profile</li>
+                            <li>5.4 Create Classroom</li>
+                            <li>5.5 Generate Class Code</li> 
+                            <li>5.6 Send Invitation Code</li>
+                            <li>5.7 Assign Pdf</li>
+                            <li>5.8 Check Questions</li>
+                            <li>5.9 View Reel of Images</li>
+                            <li>5.10 Join Classroom</li> 
+                            <li>5.11 Record Questions</li> 
+                        </ul>
+        
+                        <ol class="c">
+                        <li>6. Database Desgin</li>
+                       </ol>
+        
+                        <ul class="a">
+        
+                        <li>6.1 ER Diagram</li>
+                        <li>6.2 ER Descriptions</li>
+                        <ul class="a">
+                            <br>
+                            <li>6.2.1 Table Name: Teacher</li>
+                            <li>6.2.2 Table Name: Classroom</li>
+                            <li>6.2.3 Table Name: Student</li>
+                            <li>6.2.4 Table Name: Pdf</li>
+                            <li>6.2.5 Table Name: studentImageList</li>
+                            <li>6.2.6 Table Name: pdfQuestion</li>
+                        </ul>
+                        </ul>
+
+                        <ol class="c">
+                        <li>7. Implementation Plan</li>
+
+                        </ol>
+                </section> 
+            </div>
+            <!--Table of Contents Ends Here-->
+    
+            <!--Revision History Starts Here-->
+            <div class= "title-content">
+                <section id= RevHis>
+                    <h5 class="sub-titles">Revision History </h5>
+            
+                <table class="dyn">
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Reason for changes</th>
+                        <th>Version</th>
+                    </tr>
+                    <tr>
+                        <td>   
+                        </td>
+                        <td>     
+                        </td>
+                        <td>       
+                        </td>
+                        <td>             
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table> <br>
+                </section>
+            </div>
+            <!--Revision History Ends Here-->
+    
+            <!-- Introduction Starts Here-->
+            <div>
+                
+                    <section id="Intro">   
+                    </section>   
+                <div class= "title-content">                   
+
+                                <h3 class="intro_titles">1. Introduction </h3> <br>
+                                <p class="body">This document will tell the client how the software will be designed, providing specific information about the regular classes and functionality. 
+                                    This product (software) will be a Reading Management System which will allow a teacher to create classrooms and manage the reading tasks by uploading tasks and checking the progress of the students’ reading. 
+                                    This system will be fully featured so the user gets all the necessary information in the system. It will feature separate user interfaces for the teacher and the students so that they can navigate through the software easily. 
+                                    The web side of the system will use MySQL database for storing all relevant information and the android side of the software will use an API to connect with the MySQL database. 
+                                    This will ensure that the same software can be used in a browser as well as in the form of an Android application.
+                                </p>
+                </div>
+
+
+                
+            </div>
+             <!--Introduction Ends Here-->
+    
+             <!--Document Convention Starts Here-->
+             <div>
+               
+                    <section id="Doc_Conv">
+                    </section> 
+                <div class= "title-content">
+                                <h3 class="titles">2. Document Conventions </h3> <br>
+                                <p  class="body"> Standard formats are used across the web and the android applications. </p>
+                            </div>
+             </div>
+             <!--Document Convention Ends Here-->
+    
+             <!--Description of Design Components Starts Here-->
+             <div>
+                    <section id="EIR">
+                    </section> 
+                <div class= "title-content">
+                  <section id="3.1">
+                     <h3 class="titles">3. Description of Design Components </h3><br>
+                     <h5 class="sub-titles"> 3.1 Server Side </h5>
+                  </section>
+                        <p class="body">The back-end development will be done by MySQL and
+                                    Django. The database will hold the user information, upload
+                                    files, store the images taken when viewing a document. 
+                        </p>
+                        <br>
+                </div>
+               
+                <div class= "title-content">
+                    <section id="3.2">
+                        <h5 class="sub-titles">3.2 Client Side</h5>					
+                     </section>
+                     <p  class="body">The client side (front-end development) will be done with the
+                                    help of HTML, CSS, python and JavaScript, to make the website more user
+                                    friendly, responsive, simple interface.
+                    </p>
+                    <br>
+                </div>
+
+                <div class= "title-content">
+                    <section id="3.3">
+                        <h5 class="sub-titles">3.3 Mobile Application </h5> <br>
+                     </section>
+                        <p class="body">The android app will be fully featured. It will be made using java
+                                    programming language.
+                        </p>
+                        <br>
+                </div>
+            
+                <div class= "title-content">
+                    <section id="3.4">
+                        <h5 class="sub-titles">3.4 API </h5>
+                     </section>
+                        <p  class="body">This program will use some API (Application Programming Interface).
+                                    so that the Android application can communicate with the MySQL database and fetch data from a common source. 
+                        </p>
+                        <br>
+                </div>
+             </div>
+            <!--Description of Design Componenents Ends Here-->
+    
+            <!--UML Class Diagram Starts Here-->
+            <div>
+                
+                    <section id="4">
+                    </section> 
+                <div class= "title-content">
+                    <section id="4.1">
+                        <h3 class="titles">4. UML Class Diagram</h3><br>
+                    </section>
+                    <img src="Images/UML Class Diagram.png" alt="UML Class Diagram">     
+                </div>
+
+            </div>
+            <!--UML Class Diagram Ends Here-->
+    
+            <!--Sequence DiagramsStarts Here-->
+            <div>
+                <section id="UC">
+                </section>  
+                <div class= "title-content">
+                    <section id="5"><h3 class="titles">5. Sequence Diagram</h3>
+                        <br></div>
+                    
+                    <div class= "title-content">
+                        <section id="5.1">
+                            <h5 class="sub-titles">5.1 Login</h5>
+                            <img src="Images/sequence_diagrams/327 login.png" alt="Login">
+                            <br>
+                        </section>
+                        </section>
+
+                        <br>
+                        
+                        </div>
+
+                
+                <div class= "title-content">
+                    <section id="5.2">
+                        <h5 class="sub-titles">5.2 Verify User</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/327 verify user.png" alt="Verify user">
+                        <br>
+                </div>
+                
+                <div class= "title-content">
+                    <section id="5.3">
+                        <h5 class="sub-titles">5.3 Edit Profile</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/edit profile.png" alt="Edit Profile">
+                            <br>
+                </div>
+               
+                <div class= "title-content">
+                    <section id="5.4">
+                        <h5 class="sub-titles">5.4 Create Classroom</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/create classroom.png" alt="Create Classroom">
+                        <br>
+                    </div>
+
+
+                <div class= "title-content">
+                    <section id="5.5">
+                        <h5 class="sub-titles">5.5 Generate Class Code</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/generate classcode.png" alt="Generate Class Code">     
+                    <br>
+                </div>
+
+                <div class= "title-content">
+                    <section id="5.6">
+                        <h5 class="sub-titles">5.6 Send Invitation Code</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/send classcode.png" alt="Send Invitation Code">
+                    <br>
+                </div>
+    
+                <div class= "title-content">
+                    <section id="5.7">
+                        <h5 class="sub-titles">5.7 Assign pdf</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/asign pdf.png" alt="Assign Pdf">
+                        <br>
+                   </div>
+
+                <div class= "title-content">
+                    <section id="5.8">
+                        <h5 class="sub-titles">5.8 Check questions</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/check questions.png" alt="Check Questions">
+                        <br>
+                   </div>
+
+                    <div class= "title-content">
+                    <section id="5.9">
+                        <h5 class="sub-titles">5.9 View Reel of Images</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/view reel of images.png" alt="View Reel of Images">
+                        <br>
+                   </div>
+                
+                <div class= "title-content">
+                    <section id="5.10">
+                        <h5 class="sub-titles">5.10 Join classroom</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/join clsroom.png" alt="Join Classroom">
+                        <br>
+                </div>
+                
+                <div class= "title-content">
+                    <section id="5.11">
+                        <h5 class="sub-titles">5.11 Record Question</h5>
+                    </section>
+                    <img src="Images/sequence_diagrams/record ques.png" alt="Record Question">
+                        <br>
+                </div>
+
+            <!--Sequence Diagram Ends Here-->
+    
+            <!--Database Design Starts Here-->
+            <div>
+                <div class= "title-content">
+                    <section id="ONR">
+                    </section>	
+                    
+                    <section id="6.1">
+                        <h3 class="titles">6. Other Nonfunctional Requirements</h3><br>
+                        <h5 class="sub-titles">6.1 ER Diagram </h5>
+                    </section>        
+                        <img src="Images/CSE327 ERD (2).png" alt="ER Diagram">
+                </div>
+                
+                <div class= "title-content">
+                    <section id="6.2">
+                        <h5 class="sub-titles">6.2 ER Description</h5>
+                    </section>
+                    
+                    <div class= "title-content">
+                    <h5 class="sub-titles">6.2.1 Table Name: Teacher </h5>
+                        <p class="body"><b> Purpose: </b> To store the basic information of the Teacher. This stores the general information of the teacher as well as the login credentials.</p>
+                         	
+                         <p class="body">
+                             <div>                             
+                            Attribute 1 <br>
+                             <b>Name: </b> name <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the name of the teacher. <br>
+                             
+                             <br>
+                             
+                             Attribute 2 <br>
+                             <b>Name: </b> username <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the unique username assigned to the user. <br>
+                            
+                             <br>
+
+                            Attribute 3 <br>
+                             <b>Name: </b> email <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the teacher’s email address. <br>
+
+                             <br>
+
+                             Attribute 4 <br>
+                             <b>Name: </b> password <br>
+                             <b>Type: </b> String <br>
+                             <b>Purpose: </b> To Identify user password. <br>                            
+
+                            </div>
+
+
+                         </p>
+                    <br>
+                </div>
+                   
+                    <div class= "title-content">
+                    <h5 class="sub-titles">6.2.2 Table Name: Classroom </h5>
+                        <p class="body"><b> Purpose: </b> To store all the necessary information pertaining to classrooms.</p>
+                         	
+                         <p class="body">
+                             <div>                             
+                            Attribute 1 <br>
+                             <b>Name: </b> className <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the name of class which is unique. <br>
+                             
+                             <br>
+                             
+                             Attribute 2 <br>
+                             <b>Name: </b> Section <br>
+                             <b>Type: </b> Int <br>
+                             <b>Purpose: </b> To identify the section number of the classroom.<br>
+                            
+                             <br>
+
+                            Attribute 3 <br>
+                             <b>Name: </b> teacherUsername <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the teacher’s username who is assigned to the particular class. <br>
+
+                             <br>
+
+                             Attribute 4 <br>
+                             <b>Name: </b> invitationCode <br>
+                             <b>Type: </b> String <br>
+                             <b>Purpose: </b> To Identify the unique invitation code.<br>                            
+
+                            </div>
+
+
+                         </p>
+                    <br>
+
+                         	
+
+                    <br>
+                </div>
+
+                <div class= "title-content">
+                    <h5 class="sub-titles">6.2.3 Table Name: Student </h5>
+                        <p class="body"><b> Purpose: </b> o store all the necessary information pertaining to student.</p>
+                         	
+                         <p class="body">
+                             <div>                             
+                            Attribute 1 <br>
+                             <b>Name: </b> studentId <br>
+                             <b>Type: </b> Int <br>
+                             <b>Purpose: </b> To identify the student Id. <br>
+                             
+                             <br>
+                             
+                             Attribute 2 <br>
+                             <b>Name: </b> name <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b>To identify the name of the student.<br>
+                            
+                             <br>
+
+                            Attribute 3 <br>
+                             <b>Name: </b> username <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the student’s username. <br>
+
+                             <br>
+
+                             Attribute 4 <br>
+                             <b>Name: </b> email <br>
+                             <b>Type: </b> String <br>
+                             <b>Purpose: </b> To Identify the email of the student.<br>  
+                             
+                             <br>
+
+                             Attribute 5 <br>
+                             <b>Name: </b> pasword <br>
+                             <b>Type: </b> String <br>
+                             <b>Purpose: </b> To Identify the password of the student’s account.<br>  
+
+                             <br>
+
+                             Attribute 6 <br>
+                             <b>Name: </b> photo <br>
+                             <b>Type: </b> LongBlob <br>
+                             <b>Purpose: </b> To Identify the image of the student.<br>  
+
+                            </div>
+
+
+                         </p>
+                    <br>
+
+                         	
+
+                    <br>
+                </div>
+
+                <div class= "title-content">
+                    <h5 class="sub-titles">6.2.4 Table Name: pdf </h5>
+                    <p class="body"><b> Purpose: </b>To store all the necessary information pertaining to pdf.</p>
+                         	
+                         <p class="body">
+                             <div>                             
+                            Attribute 1 <br>
+                             <b>Name: </b> pdfName <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the name of the pdf. <br>
+                             
+                             <br>
+                             
+                             Attribute 2 <br>
+                             <b>Name: </b> teacherUsername <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the teacher’s username who is assigned to the particular class. <br>
+                            
+                             <br>
+
+                            Attribute 3 <br>
+                             <b>Name: </b> className <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the classroom name the pdf has been uploaded to. <br>
+
+                             <br>
+
+                             Attribute 4 <br>
+                             <b>Name: </b> deadline <br>
+                             <b>Type: </b> DateTime <br>
+                             <b>Purpose: </b> To Identify the deadline of the assigned task .<br>                            
+
+                            </div>
+
+
+                         </p>
+                    <br>
+                </div>
+
+                
+                <div class= "title-content">
+                    <h5 class="sub-titles">6.2.5 Table Name: studentImageList </h5>
+                    <p class="body"><b> Purpose: </b>To store all the necessary information pertaining to pdf.</p>
+                         	
+                         <p class="body">
+                             <div>                             
+                            Attribute 1 <br>
+                             <b>Name: </b> studentImage <br>
+                             <b>Type: </b> LongBlob <br>
+                             <b>Purpose: </b> To Identify the image of the student taken while reading the document. <br>
+                             
+                             <br>
+                             
+                             Attribute 2 <br>
+                             <b>Name: </b> studentId <br>
+                             <b>Type: </b> Int <br>
+                             <b>Purpose: </b> To identify the student Id. <br>
+                            
+                             <br>
+
+                            Attribute 3 <br>
+                             <b>Name: </b> pdfName <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To Identify the name of the pdf that the student is reading. <br>
+
+                             <br>
+
+                             Attribute 4 <br>
+                             <b>Name: </b>timestamp<br>
+                             <b>Type: </b> DateTime <br>
+                             <b>Purpose: </b> To Identify the time the picture of the student was taken. <br>                            
+
+                            </div>
+
+
+                         </p>
+                    <br>
+                </div>
+
+                <div class= "title-content">
+                    <h5 class="sub-titles">6.2.6 Table Name: studentImageList </h5>
+                    <p class="body"><b> Purpose: </b>To store all the questions asked by students when reading a pdf.</p>
+                         	
+                         <p class="body">
+                             <div>                             
+                            Attribute 1 <br>
+                             <b>Name: </b> pdfName <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b>To identify the name of the pdf. <br>
+                             
+                             <br>
+                             
+                             Attribute 2 <br>
+                             <b>Name: </b> question <br>
+                             <b>Type: </b> Varchar <br>
+                             <b>Purpose: </b> To identify the question asked by the student. <br>
+                            
+                             <br>
+
+                            Attribute 3 <br>
+                             <b>Name: </b> studentId <br>
+                             <b>Type: </b> Int <br>
+                             <b>Purpose: </b>To identify the student Id. <br>
+
+                             <br>
+
+                             Attribute 4 <br>
+                             <b>Name: </b> pgNo.<br>
+                             <b>Type: </b> Int <br>
+                             <b>Purpose: </b>To Identify the current page of the document. <br>                            
+
+                            </div>
+
+
+                         </p>
+                    <br>
+                </div>
+
+                   
+              </div>
+            <!--Database Design Ends Here-->
+    
+            <!--Implementation Plan Starts Here-->
+            <div>
+                <div class= "title-content">
+                    <section id="OR">
+                        <h3 class="titles">7. Implementation Plan</h3>
+                    </section>
+                    <div>
+                        <p class="body">Firstly, we have designed our software using the diagram. 
+                            Then according to the diagram, we have made the UI. 
+                            After UI is done, we have made our application and website from the class diagram. 
+                            After the application and website's front end, we have created our database from the ER diagram in the MySQL.
+                            We have connected our MySQL database with the android app and joined the same database with our website using the framework Django. 
+                            After that, we will start testing our application and website and check if they are connected with the same database and working accordingly. 
+                            Finally, we will check our features if they are working the way they are designed to work.</p>
+                    </div>
+                        
+                </div>            
+            </div>
+            <!--Other Requirements Ends Here-->
+       
+            </div>
+        </div>
+    </div>
+</body>
