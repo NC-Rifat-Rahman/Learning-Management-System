@@ -2,8 +2,8 @@
 A classroom website using Django. 
 
 Install packages: 
-pip install pillow
-pip install djangorestframework
+pip install pillow,
+pip install djangorestframework,
 pip install mysqlclient
 
 API urls:
